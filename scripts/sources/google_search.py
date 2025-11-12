@@ -9,11 +9,65 @@ Three-stage pipeline:
 
 import os
 import json
+import time
 from typing import List, Dict, Optional
 from datetime import datetime, timedelta
 import httpx
 from pathlib import Path
 from models import RawCarData, AppConfig
+
+
+# Verbose logging flag
+VERBOSE = os.getenv('AUTOFINDER_VERBOSE', '').lower() in ('1', 'true', 'yes')
+
+
+def log_request(method: str, url: str, duration: float, status: int = None, size: int = None):
+    """Log HTTP request details if verbose mode is enabled."""
+    if not VERBOSE:
+        return
+
+    # Colors for terminal
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    CYAN = '\033[96m'
+    RESET = '\033[0m'
+
+    # Format duration
+    if duration < 1:
+        duration_str = f"{duration*1000:.0f}ms"
+    else:
+        duration_str = f"{duration:.2f}s"
+
+    # Status color
+    if status:
+        if status < 300:
+            status_color = GREEN
+        elif status < 400:
+            status_color = YELLOW
+        else:
+            status_color = RED
+        status_str = f"{status_color}{status}{RESET}"
+    else:
+        status_str = "---"
+
+    # Size formatting
+    if size:
+        if size < 1024:
+            size_str = f"{size}B"
+        elif size < 1024 * 1024:
+            size_str = f"{size/1024:.1f}KB"
+        else:
+            size_str = f"{size/(1024*1024):.1f}MB"
+    else:
+        size_str = "---"
+
+    # Truncate URL for display
+    display_url = url
+    if len(display_url) > 80:
+        display_url = display_url[:77] + "..."
+
+    print(f"      {CYAN}→{RESET} {method:4} {status_str:3} {duration_str:>8} {size_str:>8} {display_url}")
 
 
 # Google Custom Search API configuration
@@ -145,10 +199,26 @@ async def google_search(client: httpx.AsyncClient, query: str, num: int = 10, si
         "num": min(num, 10),  # API limit is 10 per request
     }
 
+    start_time = time.time()
     response = await client.get(GOOGLE_SEARCH_URL, params=params)
+    duration = time.time() - start_time
+
     response.raise_for_status()
 
     data = response.json()
+    result_count = len(data.get("items", []))
+
+    log_request(
+        "GET",
+        f"{GOOGLE_SEARCH_URL}?q={query[:50]}...",
+        duration,
+        response.status_code,
+        len(response.content)
+    )
+
+    if VERBOSE and result_count > 0:
+        print(f"        ✓ Found {result_count} results")
+
     return data.get("items", [])
 
 
@@ -442,10 +512,24 @@ async def parse_inventory_pages(config: AppConfig, pages: List[Dict]) -> List[Ra
 async def fetch_page_content(client: httpx.AsyncClient, url: str) -> Optional[str]:
     """Fetch HTML content from URL."""
     try:
+        start_time = time.time()
         response = await client.get(url, follow_redirects=True)
+        duration = time.time() - start_time
+
         response.raise_for_status()
+
+        log_request(
+            "GET",
+            url,
+            duration,
+            response.status_code,
+            len(response.content)
+        )
+
         return response.text
-    except:
+    except Exception as e:
+        if VERBOSE:
+            print(f"        ✗ Failed to fetch {url[:60]}... ({e})")
         return None
 
 
@@ -560,15 +644,25 @@ Combined page content:
             }
         }
 
+        start_time = time.time()
         response = await client.post(
             f"{GEMINI_API_URL}?key={GEMINI_API_KEY}",
             json=payload,
             headers={"Content-Type": "application/json"},
             timeout=60.0  # Longer timeout for batch
         )
+        duration = time.time() - start_time
 
         response.raise_for_status()
         data = response.json()
+
+        log_request(
+            "POST",
+            f"Gemini API (batch of {len(batch)} pages)",
+            duration,
+            response.status_code,
+            len(response.content)
+        )
 
         # Extract text from response
         candidates = data.get("candidates", [])
