@@ -63,20 +63,41 @@ buy-a-car/
 
 ---
 
-## Development
+## Local Development
 
-**Backend:**
+### Quick Start (5 minutes)
+
+See **[QUICKSTART.md](QUICKSTART.md)** for step-by-step instructions.
+
 ```bash
-pip install -r scripts/requirements.txt
-python scripts/fetch.py
+# Install dependencies
+pip install -r requirements.txt
+cd site && npm install && cd ..
+
+# Set API keys
+export GOOGLE_API_KEY='your-key'
+export GOOGLE_CSE_ID='your-cse-id'
+export GEMINI_API_KEY='your-key'
+
+# Run with detailed logging
+python run_local.py
+
+# Or see demo without API keys
+python demo_logging.py
 ```
 
-**Frontend:**
-```bash
-cd site
-npm install
-npm run dev
-```
+### Features
+
+- 📊 **Detailed HTTP Logging**: See every request with timing
+- 🎨 **Color-Coded Output**: Status codes, durations, sizes
+- ⏱️ **Progress Tracking**: Real-time updates for each stage
+- 📈 **Timing Breakdown**: See where time is spent
+- 🔍 **Debugging**: Verbose error messages
+
+### Documentation
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
+- **[LOCAL_SETUP.md](LOCAL_SETUP.md)** - Comprehensive guide with troubleshooting
 
 ---
 
