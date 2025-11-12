@@ -63,14 +63,14 @@ async def gather_candidates(config: AppConfig) -> List[RawCarData]:
     else:
         print("  Google Search: No cached results (run stage scripts first)")
 
-    # Mock/Demo sources (for testing)
-    # Uncomment to use mock data for development
-    try:
-        mock_results = mock_sources.get_mock_vehicles(config)
-        candidates.extend(mock_results)
-        print(f"  Mock Sources: {len(mock_results)} vehicles")
-    except Exception as e:
-        print(f"  Mock Sources failed: {e}")
+    # Mock/Demo sources (disabled in production)
+    # Uncomment below lines to use mock data for development/testing:
+    # try:
+    #     mock_results = mock_sources.get_mock_vehicles(config)
+    #     candidates.extend(mock_results)
+    #     print(f"  Mock Sources: {len(mock_results)} vehicles")
+    # except Exception as e:
+    #     print(f"  Mock Sources failed: {e}")
 
     print(f"\nTotal candidates gathered: {len(candidates)}")
     return candidates
