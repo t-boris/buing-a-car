@@ -7,8 +7,8 @@ export default defineConfig({
 
   // GitHub Pages base path (adjust if your repo name is different)
   // For repo 'username.github.io', use '/'
-  // For repo 'buing-a-car', use '/buing-a-car/'
-  base: '/buing-a-car/',
+  // For repo 'buy-a-car', use '/buy-a-car/'
+  base: '/buy-a-car/',
 
   // Build output directory
   build: {
