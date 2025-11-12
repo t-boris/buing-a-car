@@ -36,16 +36,16 @@ async def gather_candidates(config: AppConfig) -> List[RawCarData]:
     candidates: List[RawCarData] = []
 
     # Import source modules
-    from sources import ai_meta_search, mock_sources
+    from sources import google_search, mock_sources
 
-    # AI Meta Search (if enabled)
-    if config.sources.ai_meta_search:
+    # Google Search Pipeline (if enabled)
+    if config.sources.ai_meta_search:  # Reusing this flag for Google Search
         try:
-            ai_results = await ai_meta_search.search_vehicles(config)
-            candidates.extend(ai_results)
-            print(f"  AI Meta Search: {len(ai_results)} vehicles")
+            google_results = await google_search.search_vehicles(config)
+            candidates.extend(google_results)
+            print(f"  Google Search Pipeline: {len(google_results)} vehicles")
         except Exception as e:
-            print(f"  AI Meta Search failed: {e}")
+            print(f"  Google Search Pipeline failed: {e}")
 
     # Mock/Demo sources (for testing)
     # Uncomment to use mock data for development

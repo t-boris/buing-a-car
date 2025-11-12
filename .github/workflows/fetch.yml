@@ -47,6 +47,8 @@ jobs:
       - name: Run vehicle data fetcher
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           AGGREGATOR_API_KEY: ${{ secrets.AGGREGATOR_API_KEY }}
         run: |
           python scripts/fetch.py
