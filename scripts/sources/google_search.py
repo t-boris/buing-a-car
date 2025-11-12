@@ -141,10 +141,11 @@ async def find_dealerships(config: AppConfig) -> List[Dict]:
 
     async with httpx.AsyncClient(timeout=15.0) as client:
         for i, query in enumerate(queries, 1):
-            print(f"    [{i}/{len(queries)}] Searching: {query}")
+            print(f"    [{i}/{len(queries)}] Searching: {query:<50}", end='', flush=True)
             try:
                 results = await google_search(client, query, num=10)
 
+                found_new = 0
                 for item in results:
                     name = item.get("title", "")
                     domain = extract_domain(item.get("link", ""))
@@ -163,12 +164,22 @@ async def find_dealerships(config: AppConfig) -> List[Dict]:
                     # Deduplicate by website
                     if dealership["website"] and not any(d["website"] == dealership["website"] for d in dealerships):
                         dealerships.append(dealership)
+                        found_new += 1
+
+                # Show result on same line
+                if not VERBOSE:
+                    print(f" → {found_new} new, {len(dealerships)} total")
+                else:
+                    print(f"\n        ✓ {found_new} new dealers, {len(dealerships)} total")
 
             except Exception as e:
-                print(f"    Warning: Search failed for '{query}': {e}")
+                if not VERBOSE:
+                    print(f" → Error: {str(e)[:40]}")
+                else:
+                    print(f"\n        ✗ Search failed: {e}")
                 continue
 
-    print(f"  Found {len(dealerships)} unique dealerships")
+    print(f"\n  ✓ Found {len(dealerships)} unique dealerships")
 
     # Cache results
     save_dealerships_cache(dealerships)
@@ -399,10 +410,15 @@ async def search_inventory(config: AppConfig, dealerships: List[Dict]) -> List[D
 
     async with httpx.AsyncClient(timeout=15.0) as client:
         # Process ALL dealerships, no limit
-        for dealership in dealerships:
+        for idx, dealership in enumerate(dealerships, 1):
             website = dealership.get("website")
             if not website:
                 continue
+
+            dealer_name = dealership["name"]
+            dealer_pages_before = len(pages)
+
+            print(f"    [{idx}/{len(dealerships)}] {dealer_name:<40}", end='', flush=True)
 
             # Use ALL search terms, no limit
             for term in search_terms:
@@ -434,7 +450,14 @@ async def search_inventory(config: AppConfig, dealerships: List[Dict]) -> List[D
                 except Exception as e:
                     continue  # Skip on error, continue with next
 
-    print(f"  Found {len(pages)} inventory pages")
+            # Show result for this dealer
+            dealer_pages_found = len(pages) - dealer_pages_before
+            if dealer_pages_found > 0:
+                print(f" → {dealer_pages_found} pages ({len(pages)} total)")
+            else:
+                print(f" → 0 pages")
+
+    print(f"\n  ✓ Found {len(pages)} inventory pages total")
     return pages
 
 
@@ -486,26 +509,33 @@ async def parse_inventory_pages(config: AppConfig, pages: List[Dict]) -> List[Ra
     async with httpx.AsyncClient(timeout=60.0) as client:
         for batch_num, batch in enumerate(all_batches, 1):
             dealer_name = batch[0]['dealership']
-            print(f"    [{batch_num}/{len(all_batches)}] Processing {dealer_name} ({len(batch)} pages)...")
+            print(f"    [{batch_num}/{len(all_batches)}] {dealer_name:<35} ({len(batch)} pages)", end='', flush=True)
 
             try:
                 # Process batch with combined Gemini request
                 batch_vehicles = await parse_batch_with_gemini(client, batch, config)
                 vehicles.extend(batch_vehicles)
 
-                print(f"      → Found {len(batch_vehicles)} vehicles")
+                if not VERBOSE:
+                    print(f" → {len(batch_vehicles)} vehicles ({len(vehicles)} total)")
+                else:
+                    print(f"\n        ✓ Found {len(batch_vehicles)} vehicles, {len(vehicles)} total")
 
                 # Rate limiting: 4 seconds between batches (15 RPM)
                 if batch_num < len(all_batches):
                     import asyncio
-                    print(f"      → Waiting 4s for rate limit...")
+                    if VERBOSE:
+                        print(f"        → Waiting 4s for rate limit...")
                     await asyncio.sleep(4)
 
             except Exception as e:
-                print(f"      → Error: {e}")
+                if not VERBOSE:
+                    print(f" → Error: {str(e)[:40]}")
+                else:
+                    print(f"\n        ✗ Error: {e}")
                 continue
 
-    print(f"  Extracted {len(vehicles)} vehicles total")
+    print(f"\n  ✓ Extracted {len(vehicles)} vehicles total")
     return vehicles
 
 
