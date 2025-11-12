@@ -92,9 +92,16 @@ async def find_dealerships(config: AppConfig) -> List[Dict]:
                 results = await google_search(client, query, num=10)
 
                 for item in results:
+                    name = item.get("title", "")
+                    domain = extract_domain(item.get("link", ""))
+
+                    # Filter: only local dealerships, no aggregators/manufacturers
+                    if not is_local_dealership(domain, name):
+                        continue
+
                     dealership = {
-                        "name": item.get("title", ""),
-                        "website": extract_domain(item.get("link", "")),
+                        "name": name,
+                        "website": domain,
                         "snippet": item.get("snippet", ""),
                         "found_at": datetime.now().isoformat(),
                     }
@@ -157,6 +164,59 @@ def extract_domain(url: str) -> str:
         return domain
     except:
         return ""
+
+
+def is_local_dealership(domain: str, name: str) -> bool:
+    """
+    Filter to keep only LOCAL dealerships, excluding aggregators and manufacturer sites.
+
+    Args:
+        domain: Website domain (e.g., "carwisegurnee.com")
+        name: Dealership name from search result
+
+    Returns:
+        True if this is a local dealership, False if it's an aggregator/manufacturer
+    """
+    if not domain:
+        return False
+
+    text = (domain + " " + name).lower()
+
+    # Exclude aggregators
+    aggregators = [
+        "cars.com", "autotrader.com", "carmax.com", "carvana.com",
+        "truecar.com", "edmunds.com", "kbb.com", "carfax.com",
+        "cargurus.com", "vroom.com", "shift.com", "autotempest.com",
+        "carbuyingtips.com"
+    ]
+
+    if any(agg in domain for agg in aggregators):
+        return False
+
+    # Exclude manufacturer websites
+    manufacturers = [
+        "toyota.com", "honda.com", "ford.com", "chevrolet.com",
+        "nissan.com", "hyundai.com", "kia.com", "subaru.com",
+        "mazda.com", "volkswagen.com", "gm.com", "bmw.com",
+        "mercedes-benz.com", "lexus.com", "acura.com"
+    ]
+
+    if any(mfr in domain for mfr in manufacturers):
+        return False
+
+    # Exclude general directories/listings
+    directories = [
+        "yelp.com", "google.com", "facebook.com", "yellowpages.com",
+        "mapquest.com", "dealerrater.com"
+    ]
+
+    if any(directory in domain for directory in directories):
+        return False
+
+    # If it's a local-sounding domain (contains city name or dealership keywords), keep it
+    local_keywords = ["dealer", "dealership", "auto", "motor", "car"]
+
+    return any(keyword in text for keyword in local_keywords)
 
 
 def load_dealerships_cache() -> Optional[List[Dict]]:
