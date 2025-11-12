@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-11T18:24:51.791580-06:00",
+  "generated_at": "2025-11-11T19:58:22.052169-06:00",
   "zip": "60031",
   "radius_miles": 50,
   "items": [
@@ -26,7 +26,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854633-06:00",
-        "last_seen": "2025-11-11T18:24:51.854633-06:00"
+        "last_seen": "2025-11-11T19:58:22.259637-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -39,9 +39,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 18990.0,
         "last_change_at": null
       }
     },
@@ -68,7 +68,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854686-06:00",
-        "last_seen": "2025-11-11T18:24:51.854686-06:00"
+        "last_seen": "2025-11-11T19:58:22.259714-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -81,9 +81,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 22990.0,
         "last_change_at": null
       }
     },
@@ -110,7 +110,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854708-06:00",
-        "last_seen": "2025-11-11T18:24:51.854708-06:00"
+        "last_seen": "2025-11-11T19:58:22.259745-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -123,9 +123,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 15490.0,
         "last_change_at": null
       }
     },
@@ -152,7 +152,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854721-06:00",
-        "last_seen": "2025-11-11T18:24:51.854721-06:00"
+        "last_seen": "2025-11-11T19:58:22.259779-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -165,9 +165,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 17890.0,
         "last_change_at": null
       }
     },
@@ -194,7 +194,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854733-06:00",
-        "last_seen": "2025-11-11T18:24:51.854733-06:00"
+        "last_seen": "2025-11-11T19:58:22.259806-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -207,9 +207,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 21490.0,
         "last_change_at": null
       }
     },
@@ -236,7 +236,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854743-06:00",
-        "last_seen": "2025-11-11T18:24:51.854743-06:00"
+        "last_seen": "2025-11-11T19:58:22.259834-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -249,9 +249,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 16990.0,
         "last_change_at": null
       }
     },
@@ -278,7 +278,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854753-06:00",
-        "last_seen": "2025-11-11T18:24:51.854753-06:00"
+        "last_seen": "2025-11-11T19:58:22.259860-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -291,9 +291,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 14990.0,
         "last_change_at": null
       }
     },
@@ -320,7 +320,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854763-06:00",
-        "last_seen": "2025-11-11T18:24:51.854763-06:00"
+        "last_seen": "2025-11-11T19:58:22.259890-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -333,9 +333,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 16490.0,
         "last_change_at": null
       }
     },
@@ -362,7 +362,7 @@
       },
       "timestamps": {
         "first_seen": "2025-11-11T18:24:51.854803-06:00",
-        "last_seen": "2025-11-11T18:24:51.854803-06:00"
+        "last_seen": "2025-11-11T19:58:22.259971-06:00"
       },
       "finance": {
         "est_down": 3000.0,
@@ -375,9 +375,9 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 23990.0,
         "last_change_at": null
       }
     }
