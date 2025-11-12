@@ -25,7 +25,11 @@
       "Hyundai",
       "Kia",
       "Subaru",
-      "Mazda"
+      "Mazda",
+      "Nissan",
+      "Ford",
+      "Chevrolet",
+      "Volkswagen"
     ],
     "exclude_models": []
   },
