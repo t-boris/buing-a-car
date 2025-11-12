@@ -421,10 +421,12 @@ async def search_inventory(config: AppConfig, dealerships: List[Dict]) -> List[D
             print(f"    [{idx}/{len(dealerships)}] {dealer_name:<40}", end='', flush=True)
 
             # Use ALL search terms, no limit
+            search_results_count = 0
             for term in search_terms:
                 try:
                     query = f"{term}"
                     results = await google_search(client, query, num=5, site=website)
+                    search_results_count += len(results)
 
                     for item in results:
                         title = item.get("title", "")
@@ -433,6 +435,8 @@ async def search_inventory(config: AppConfig, dealerships: List[Dict]) -> List[D
 
                         # Filter out non-inventory pages
                         if not is_inventory_page(title, snippet):
+                            if VERBOSE:
+                                print(f"\n        ✗ Filtered: {title[:60]}")
                             continue
 
                         page = {
@@ -446,8 +450,12 @@ async def search_inventory(config: AppConfig, dealerships: List[Dict]) -> List[D
                         # Deduplicate by URL
                         if page["url"] and not any(p["url"] == page["url"] for p in pages):
                             pages.append(page)
+                            if VERBOSE:
+                                print(f"\n        ✓ Added: {title[:60]}")
 
                 except Exception as e:
+                    if VERBOSE:
+                        print(f"\n        ✗ Search error for '{term}': {e}")
                     continue  # Skip on error, continue with next
 
             # Show result for this dealer
@@ -455,7 +463,11 @@ async def search_inventory(config: AppConfig, dealerships: List[Dict]) -> List[D
             if dealer_pages_found > 0:
                 print(f" → {dealer_pages_found} pages ({len(pages)} total)")
             else:
-                print(f" → 0 pages")
+                # Show why we got 0 pages
+                if search_results_count == 0:
+                    print(f" → 0 results from Google")
+                else:
+                    print(f" → {search_results_count} results, 0 passed filter")
 
     print(f"\n  ✓ Found {len(pages)} inventory pages total")
     return pages
