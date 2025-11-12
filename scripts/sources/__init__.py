@@ -40,7 +40,8 @@ async def gather_candidates(config: AppConfig) -> List[RawCarData]:
     import json
 
     # Try to load Google Search results from Stage 3 cache
-    stage3_cache = Path(__file__).parent.parent / "data" / ".cache" / "stage3_vehicles.json"
+    # Path: scripts/sources/__init__.py -> scripts/sources -> scripts -> root
+    stage3_cache = Path(__file__).parent.parent.parent / "data" / ".cache" / "stage3_vehicles.json"
 
     if stage3_cache.exists():
         try:
