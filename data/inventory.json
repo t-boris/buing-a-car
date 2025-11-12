@@ -1,8 +1,1108 @@
 {
-  "generated_at": "2025-11-11T21:56:55.512858-06:00",
+  "generated_at": "2025-11-11T22:31:14.520866-06:00",
   "zip": "60031",
-  "radius_miles": 50,
+  "radius_miles": 15,
   "items": [
+    {
+      "id": "hash-582cd7200508bb2f742a687b4e9b424159b70411",
+      "vin": null,
+      "source": "google-search",
+      "title": "2020 Buick Enclave Essence",
+      "year": 2020,
+      "make": "Buick",
+      "model": "Enclave",
+      "trim": "Essence",
+      "condition": "used",
+      "price": 23477.0,
+      "mileage": 60899,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523329-06:00",
+        "last_seen": "2025-11-11T22:31:14.523329-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 433.79,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-4ba8cc9bc4b3e5395c15a8f2309fb920d06ed4e6",
+      "vin": null,
+      "source": "google-search",
+      "title": "2020 Jeep Grand Cherokee Limited",
+      "year": 2020,
+      "make": "Jeep",
+      "model": "Grand Cherokee",
+      "trim": "Limited",
+      "condition": "used",
+      "price": 20497.0,
+      "mileage": 76709,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523380-06:00",
+        "last_seen": "2025-11-11T22:31:14.523380-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 371.85,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-290dcb163adfd006259f546907cd65199aeb09a0",
+      "vin": null,
+      "source": "google-search",
+      "title": "2018 GMC Canyon",
+      "year": 2018,
+      "make": "GMC",
+      "model": "Canyon",
+      "trim": null,
+      "condition": "used",
+      "price": 20050.0,
+      "mileage": 81058,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523447-06:00",
+        "last_seen": "2025-11-11T22:31:14.523447-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 362.56,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-7449f247ee9eeb947613d17a647cb2c8b2d3920e",
+      "vin": null,
+      "source": "google-search",
+      "title": "2017 GMC Sierra 1500 SLE",
+      "year": 2017,
+      "make": "GMC",
+      "model": "Sierra 1500",
+      "trim": "SLE",
+      "condition": "used",
+      "price": 23400.0,
+      "mileage": 84401,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523475-06:00",
+        "last_seen": "2025-11-11T22:31:14.523475-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 432.18,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-652f1b1394684219c7d57a3e6af105a8807d3532",
+      "vin": null,
+      "source": "google-search",
+      "title": "2021 INFINITI QX50 LUXE",
+      "year": 2021,
+      "make": "INFINITI",
+      "model": "QX50",
+      "trim": "LUXE",
+      "condition": "used",
+      "price": 20497.0,
+      "mileage": 71007,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523502-06:00",
+        "last_seen": "2025-11-11T22:31:14.523502-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 371.85,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-472bee1b73499ad589075ba37e9a9e1989f26138",
+      "vin": null,
+      "source": "google-search",
+      "title": "2022 Ford Maverick XL",
+      "year": 2022,
+      "make": "Ford",
+      "model": "Maverick",
+      "trim": "XL",
+      "condition": "used",
+      "price": 20800.0,
+      "mileage": 75557,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523528-06:00",
+        "last_seen": "2025-11-11T22:31:14.523528-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 378.15,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-00cd8b5918093880b5a079c641adb79bc7fcced5",
+      "vin": null,
+      "source": "google-search",
+      "title": "2022 Nissan Murano SL",
+      "year": 2022,
+      "make": "Nissan",
+      "model": "Murano",
+      "trim": "SL",
+      "condition": "used",
+      "price": 22995.0,
+      "mileage": 36924,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523698-06:00",
+        "last_seen": "2025-11-11T22:31:14.523698-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 423.77,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-3ce5403e2b926ffe62cd06d644af1f3456b16f11",
+      "vin": null,
+      "source": "google-search",
+      "title": "2022 Subaru Legacy Premium",
+      "year": 2022,
+      "make": "Subaru",
+      "model": "Legacy",
+      "trim": "Premium",
+      "condition": "used",
+      "price": 20995.0,
+      "mileage": 49154,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523872-06:00",
+        "last_seen": "2025-11-11T22:31:14.523872-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 382.2,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-842f89ae0428012e59b2dc30321f076f890dbee7",
+      "vin": null,
+      "source": "google-search",
+      "title": "2021 INFINITI QX50 LUXE",
+      "year": 2021,
+      "make": "INFINITI",
+      "model": "QX50",
+      "trim": "LUXE",
+      "condition": "used",
+      "price": 22499.0,
+      "mileage": 61299,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523897-06:00",
+        "last_seen": "2025-11-11T22:31:14.523897-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 413.46,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-6f99ca4a40dc54819ad4c48ec72828eb586ebb44",
+      "vin": null,
+      "source": "google-search",
+      "title": "2020 Alfa Romeo Stelvio Ti",
+      "year": 2020,
+      "make": "Alfa Romeo",
+      "model": "Stelvio",
+      "trim": "Ti",
+      "condition": "used",
+      "price": 22499.0,
+      "mileage": 44319,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523920-06:00",
+        "last_seen": "2025-11-11T22:31:14.523920-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 413.46,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-b18e3f6286d4dc1872cd6994bee8a359b1250fba",
+      "vin": null,
+      "source": "google-search",
+      "title": "2022 Jeep Grand Cherokee Limited",
+      "year": 2022,
+      "make": "Jeep",
+      "model": "Grand Cherokee",
+      "trim": "Limited",
+      "condition": "used",
+      "price": 20222.0,
+      "mileage": 99558,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.523989-06:00",
+        "last_seen": "2025-11-11T22:31:14.523989-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 366.14,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-7158a61968d01b5ebf624ed300155f4b8624a38a",
+      "vin": null,
+      "source": "google-search",
+      "title": "2017 Ford F-150 XLT",
+      "year": 2017,
+      "make": "Ford",
+      "model": "F-150",
+      "trim": "XLT",
+      "condition": "used",
+      "price": 23500.0,
+      "mileage": 121239,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524012-06:00",
+        "last_seen": "2025-11-11T22:31:14.524012-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 434.26,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-3427380846068bec46464be3462cf214aad2a8b7",
+      "vin": null,
+      "source": "google-search",
+      "title": "2022 Nissan Altima 2.5 SV",
+      "year": 2022,
+      "make": "Nissan",
+      "model": "Altima",
+      "trim": "2.5 SV",
+      "condition": "used",
+      "price": 16777.0,
+      "mileage": 70271,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524036-06:00",
+        "last_seen": "2025-11-11T22:31:14.524036-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 294.54,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-1cf57d8e8f670c255305ed66e9a837ba7d7eb52d",
+      "vin": null,
+      "source": "google-search",
+      "title": "2018 Nissan Altima 2.5 SL",
+      "year": 2018,
+      "make": "Nissan",
+      "model": "Altima",
+      "trim": "2.5 SL",
+      "condition": "used",
+      "price": 12297.0,
+      "mileage": 101924,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/used-cars-gurnee-il"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524060-06:00",
+        "last_seen": "2025-11-11T22:31:14.524060-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 201.43,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-21f6fef177968413c873cda1d9c617a31be01e3c",
+      "vin": null,
+      "source": "google-search",
+      "title": "2020 Buick Enclave Essence",
+      "year": 2020,
+      "make": "Buick",
+      "model": "Enclave",
+      "trim": "Essence",
+      "condition": "used",
+      "price": 23477.0,
+      "mileage": 60899,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524083-06:00",
+        "last_seen": "2025-11-11T22:31:14.524083-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 433.79,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-c1b6604ccf462b42104c375b4d4ae84b6c8c8daa",
+      "vin": null,
+      "source": "google-search",
+      "title": "2020 Jeep Grand Cherokee Limited",
+      "year": 2020,
+      "make": "Jeep",
+      "model": "Grand Cherokee",
+      "trim": "Limited",
+      "condition": "used",
+      "price": 20497.0,
+      "mileage": 76709,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524106-06:00",
+        "last_seen": "2025-11-11T22:31:14.524106-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 371.85,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-4624c1982b90bbab3c7e69a95305a0e202b44775",
+      "vin": null,
+      "source": "google-search",
+      "title": "2018 GMC Canyon",
+      "year": 2018,
+      "make": "GMC",
+      "model": "Canyon",
+      "trim": null,
+      "condition": "used",
+      "price": 20050.0,
+      "mileage": 81058,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524152-06:00",
+        "last_seen": "2025-11-11T22:31:14.524152-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 362.56,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-8d06359df86a04b2654e3a3ec3b52ce80dd5b61d",
+      "vin": null,
+      "source": "google-search",
+      "title": "2017 GMC Sierra 1500 SLE",
+      "year": 2017,
+      "make": "GMC",
+      "model": "Sierra 1500",
+      "trim": "SLE",
+      "condition": "used",
+      "price": 23400.0,
+      "mileage": 84401,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524175-06:00",
+        "last_seen": "2025-11-11T22:31:14.524175-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 432.18,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-ff153716d440465ab865b15e276372ac95079008",
+      "vin": null,
+      "source": "google-search",
+      "title": "2021 INFINITI QX50 LUXE",
+      "year": 2021,
+      "make": "INFINITI",
+      "model": "QX50",
+      "trim": "LUXE",
+      "condition": "used",
+      "price": 20497.0,
+      "mileage": 71007,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524239-06:00",
+        "last_seen": "2025-11-11T22:31:14.524239-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 371.85,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-ee6617edc7f76092f65956ce2ba21c4f1a3330f9",
+      "vin": null,
+      "source": "google-search",
+      "title": "2022 Ford Maverick XL",
+      "year": 2022,
+      "make": "Ford",
+      "model": "Maverick",
+      "trim": "XL",
+      "condition": "used",
+      "price": 20800.0,
+      "mileage": 75557,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524265-06:00",
+        "last_seen": "2025-11-11T22:31:14.524265-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 378.15,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-0144965c04d59295d03fe59dab928f809016f842",
+      "vin": null,
+      "source": "google-search",
+      "title": "2019 Toyota RAV4 XLE",
+      "year": 2019,
+      "make": "Toyota",
+      "model": "RAV4",
+      "trim": "XLE",
+      "condition": "used",
+      "price": 22497.0,
+      "mileage": 63715,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524406-06:00",
+        "last_seen": "2025-11-11T22:31:14.524406-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 413.42,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-8c78f36476aeb0fbb5b06cdac1340e8284f0ede9",
+      "vin": null,
+      "source": "google-search",
+      "title": "2015 Honda CR-V LX",
+      "year": 2015,
+      "make": "Honda",
+      "model": "CR-V",
+      "trim": "LX",
+      "condition": "used",
+      "price": 11333.0,
+      "mileage": 140063,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524662-06:00",
+        "last_seen": "2025-11-11T22:31:14.524662-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 181.4,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-5d6ccba6ce238ceb89bc0b171195dfc026e5084f",
+      "vin": null,
+      "source": "google-search",
+      "title": "2019 Honda Odyssey EX-L",
+      "year": 2019,
+      "make": "Honda",
+      "model": "Odyssey",
+      "trim": "EX-L",
+      "condition": "used",
+      "price": 24056.0,
+      "mileage": 78635,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524691-06:00",
+        "last_seen": "2025-11-11T22:31:14.524691-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 445.82,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-abb4a44600102e3733fafedfe4768bdf67e9ca50",
+      "vin": null,
+      "source": "google-search",
+      "title": "2015 Honda Civic EX-L",
+      "year": 2015,
+      "make": "Honda",
+      "model": "Civic",
+      "trim": "EX-L",
+      "condition": "used",
+      "price": 14777.0,
+      "mileage": 89350,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524715-06:00",
+        "last_seen": "2025-11-11T22:31:14.524715-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 252.98,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
+    {
+      "id": "hash-0e5caf351de04558db39da2515d51c1e1fa67682",
+      "vin": null,
+      "source": "google-search",
+      "title": "2018 Honda Clarity Plug-In Hybrid Touring",
+      "year": 2018,
+      "make": "Honda",
+      "model": "Clarity Plug-In Hybrid",
+      "trim": "Touring",
+      "condition": "used",
+      "price": 19950.0,
+      "mileage": 60088,
+      "distance_miles": 0.0,
+      "dealer": {
+        "name": "CarWise Gurnee | Quality used cars, trucks, & SUVs for sale",
+        "phone": null,
+        "url": "https://www.carwisegurnee.com/op-waukegan-used-cars-for-sale"
+      },
+      "media": {
+        "thumbnail": null
+      },
+      "timestamps": {
+        "first_seen": "2025-11-11T22:31:14.524738-06:00",
+        "last_seen": "2025-11-11T22:31:14.524738-06:00"
+      },
+      "finance": {
+        "est_down": 3000.0,
+        "est_monthly": 360.48,
+        "assumptions": {
+          "apr_percent": 6.0,
+          "term_months": 60,
+          "ttl_percent_of_price": 7.5,
+          "doc_fees": 200.0
+        }
+      },
+      "price_trend": {
+        "direction": "new",
+        "delta": 0.0,
+        "prev_price": null,
+        "last_change_at": null
+      },
+      "days_to_live": 3,
+      "expired_at": null
+    },
     {
       "id": "hash-5310846c9ed114747f5b1d9ef10490b758827562",
       "vin": null,
@@ -44,7 +1144,7 @@
         "prev_price": 16777.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -88,7 +1188,7 @@
         "prev_price": 12297.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -132,7 +1232,7 @@
         "prev_price": 20497.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -176,7 +1276,7 @@
         "prev_price": 23477.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -220,7 +1320,7 @@
         "prev_price": 20497.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -264,7 +1364,7 @@
         "prev_price": 22499.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -303,12 +1403,12 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 20400.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -347,12 +1447,12 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 20995.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -391,12 +1491,12 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 21455.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -440,7 +1540,7 @@
         "prev_price": 20497.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -484,7 +1584,7 @@
         "prev_price": 23400.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -528,7 +1628,7 @@
         "prev_price": 23477.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -572,7 +1672,7 @@
         "prev_price": 20497.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -616,7 +1716,7 @@
         "prev_price": 20050.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -660,7 +1760,7 @@
         "prev_price": 20800.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -699,12 +1799,12 @@
         }
       },
       "price_trend": {
-        "direction": "new",
+        "direction": "flat",
         "delta": 0.0,
-        "prev_price": null,
+        "prev_price": 22499.0,
         "last_change_at": null
       },
-      "days_to_live": 3,
+      "days_to_live": 2,
       "expired_at": null
     },
     {
@@ -748,7 +1848,7 @@
         "prev_price": 22499.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -792,7 +1892,7 @@
         "prev_price": 18497.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -836,7 +1936,7 @@
         "prev_price": 18990.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -880,7 +1980,7 @@
         "prev_price": 22990.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -924,7 +2024,7 @@
         "prev_price": 15490.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -968,7 +2068,7 @@
         "prev_price": 17890.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -1012,7 +2112,7 @@
         "prev_price": 21490.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -1056,7 +2156,7 @@
         "prev_price": 16990.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -1100,7 +2200,7 @@
         "prev_price": 14990.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -1144,7 +2244,7 @@
         "prev_price": 16490.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     },
     {
@@ -1188,7 +2288,7 @@
         "prev_price": 23990.0,
         "last_change_at": null
       },
-      "days_to_live": 2,
+      "days_to_live": 1,
       "expired_at": null
     }
   ]
