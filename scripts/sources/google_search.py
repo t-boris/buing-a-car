@@ -203,6 +203,39 @@ def save_dealerships_cache(dealerships: List[Dict]):
 # STAGE 2: Search Inventory
 # ============================================================================
 
+def is_inventory_page(title: str, snippet: str) -> bool:
+    """
+    Filter out non-inventory pages based on title and snippet.
+
+    Args:
+        title: Page title from Google search
+        snippet: Page snippet from Google search
+
+    Returns:
+        True if page likely contains vehicle inventory
+    """
+    text = (title + " " + snippet).lower()
+
+    # Skip pages that are clearly not inventory
+    skip_keywords = [
+        "about us", "about our", "contact",  "financing", "finance application",
+        "service", "service center", "hours", "directions", "location",
+        "careers", "employment", "reviews", "testimonials", "meet the team",
+        "warranty", "parts", "accessories", "specials disclaimer"
+    ]
+
+    if any(keyword in text for keyword in skip_keywords):
+        return False
+
+    # Keep pages that likely have inventory
+    keep_keywords = [
+        "inventory", "vehicles", "cars", "used", "certified",
+        "$", "price", "for sale", "stock", "available"
+    ]
+
+    return any(keyword in text for keyword in keep_keywords)
+
+
 async def search_inventory(config: AppConfig, dealerships: List[Dict]) -> List[Dict]:
     """
     Stage 2: Search for vehicle inventory on dealership websites.
@@ -248,10 +281,18 @@ async def search_inventory(config: AppConfig, dealerships: List[Dict]) -> List[D
                     results = await google_search(client, query, num=5, site=website)
 
                     for item in results:
+                        title = item.get("title", "")
+                        snippet = item.get("snippet", "")
+                        url = item.get("link", "")
+
+                        # Filter out non-inventory pages
+                        if not is_inventory_page(title, snippet):
+                            continue
+
                         page = {
-                            "url": item.get("link", ""),
-                            "title": item.get("title", ""),
-                            "snippet": item.get("snippet", ""),
+                            "url": url,
+                            "title": title,
+                            "snippet": snippet,
                             "dealership": dealership["name"],
                             "dealership_site": website,
                         }
@@ -275,6 +316,9 @@ async def parse_inventory_pages(config: AppConfig, pages: List[Dict]) -> List[Ra
     """
     Stage 3: Fetch page content and extract vehicle data using Gemini.
 
+    Uses batch processing: groups pages by dealership and processes 8 pages
+    at a time in a single Gemini request for efficiency.
+
     Args:
         config: Application configuration
         pages: List of inventory page URLs from Stage 2
@@ -289,32 +333,46 @@ async def parse_inventory_pages(config: AppConfig, pages: List[Dict]) -> List[Ra
         print("  Warning: GEMINI_API_KEY not set, skipping parsing")
         return []
 
-    print(f"  Parsing {len(pages)} pages with Gemini...")
+    print(f"  Parsing {len(pages)} pages with Gemini (batched processing)...")
+
+    # Group pages by dealership
+    by_dealer = {}
+    for page in pages:
+        dealer_site = page['dealership_site']
+        by_dealer.setdefault(dealer_site, []).append(page)
+
+    # Create batches of 8 pages each
+    all_batches = []
+    for dealer_site, dealer_pages in by_dealer.items():
+        # Split dealer pages into batches of 8
+        for i in range(0, len(dealer_pages), 8):
+            batch = dealer_pages[i:i+8]
+            all_batches.append(batch)
+
+    print(f"  Created {len(all_batches)} batches from {len(by_dealer)} dealerships")
 
     vehicles = []
 
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        # Process ALL pages, no limit - we don't want to miss any deals
-        for i, page in enumerate(pages, 1):
+    async with httpx.AsyncClient(timeout=60.0) as client:
+        for batch_num, batch in enumerate(all_batches, 1):
+            dealer_name = batch[0]['dealership']
+            print(f"    [{batch_num}/{len(all_batches)}] Processing {dealer_name} ({len(batch)} pages)...")
+
             try:
-                # Fetch page content
-                html = await fetch_page_content(client, page["url"])
-                if not html:
-                    continue
+                # Process batch with combined Gemini request
+                batch_vehicles = await parse_batch_with_gemini(client, batch, config)
+                vehicles.extend(batch_vehicles)
 
-                # Extract text (simple approach - remove tags)
-                text = extract_text_from_html(html)
-                if len(text) < 100:  # Skip if too little content
-                    continue
+                print(f"      → Found {len(batch_vehicles)} vehicles")
 
-                # Parse with Gemini
-                page_vehicles = await parse_with_gemini(client, text, page, config)
-                vehicles.extend(page_vehicles)
-
-                print(f"    [{i}/{min(len(pages), 20)}] {page['dealership']}: {len(page_vehicles)} vehicles")
+                # Rate limiting: 4 seconds between batches (15 RPM)
+                if batch_num < len(all_batches):
+                    import asyncio
+                    print(f"      → Waiting 4s for rate limit...")
+                    await asyncio.sleep(4)
 
             except Exception as e:
-                print(f"    Warning: Failed to parse {page['url']}: {e}")
+                print(f"      → Error: {e}")
                 continue
 
     print(f"  Extracted {len(vehicles)} vehicles total")
@@ -351,8 +409,158 @@ def extract_text_from_html(html: str) -> str:
     text = re.sub(r'\s+', ' ', text)
     text = text.strip()
 
-    # Truncate to 15000 chars (Gemini token limit consideration)
-    return text[:15000]
+    # Truncate to 10000 chars per page (for batching)
+    return text[:10000]
+
+
+async def parse_batch_with_gemini(client: httpx.AsyncClient, batch: List[Dict], config: AppConfig) -> List[RawCarData]:
+    """
+    Process a batch of pages with a single Gemini request.
+
+    Fetches HTML from multiple pages, combines them, and sends one request
+    to Gemini for extraction. More efficient than individual requests.
+
+    Args:
+        client: HTTP client
+        batch: List of page dicts to process together
+        config: App configuration
+
+    Returns:
+        List of raw vehicle data from all pages in batch
+    """
+    # Fetch and combine page content
+    combined_text = ""
+    dealer_name = batch[0]['dealership']
+    dealer_site = batch[0]['dealership_site']
+
+    for i, page in enumerate(batch, 1):
+        try:
+            html = await fetch_page_content(client, page["url"])
+            if not html:
+                continue
+
+            text = extract_text_from_html(html)
+            if len(text) < 100:
+                continue
+
+            # Add page separator
+            combined_text += f"\n\n{'='*60}\nPAGE {i}: {page['url']}\n{'='*60}\n{text}\n"
+
+        except Exception as e:
+            print(f"        Warning: Failed to fetch page {i}: {e}")
+            continue
+
+    if not combined_text:
+        return []
+
+    # Build combined prompt
+    prompt = f"""
+Extract ALL vehicle listings from these {len(batch)} car dealership webpages.
+
+Dealership: {dealer_name}
+Website: {dealer_site}
+
+IMPORTANT: Process ALL pages and return ALL vehicles found across all pages in a SINGLE combined array.
+
+Return ONLY valid JSON with this structure (no markdown, no extra text):
+{{
+  "vehicles": [
+    {{
+      "vin": "VIN if available or null",
+      "year": 2020,
+      "make": "Honda",
+      "model": "Accord",
+      "trim": "EX-L or null",
+      "condition": "used or certified or new",
+      "price": 22990,
+      "mileage": 45000
+    }}
+  ]
+}}
+
+Requirements:
+- Process ALL pages below and combine results
+- Only include vehicles with year, make, model, and price
+- Set mileage to null for new cars if not listed
+- If no vehicles found in ANY page, return {{"vehicles": []}}
+
+Combined page content:
+{combined_text}
+"""
+
+    try:
+        payload = {
+            "contents": [{
+                "parts": [{"text": prompt}]
+            }],
+            "generationConfig": {
+                "temperature": 0.1,
+                "topP": 0.8,
+                "maxOutputTokens": 8192  # Increased for batch results
+            }
+        }
+
+        response = await client.post(
+            f"{GEMINI_API_URL}?key={GEMINI_API_KEY}",
+            json=payload,
+            headers={"Content-Type": "application/json"},
+            timeout=60.0  # Longer timeout for batch
+        )
+
+        response.raise_for_status()
+        data = response.json()
+
+        # Extract text from response
+        candidates = data.get("candidates", [])
+        if not candidates:
+            return []
+
+        text_content = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+
+        # Clean markdown if present
+        text_content = text_content.strip()
+        if text_content.startswith("```json"):
+            text_content = text_content[7:]
+        if text_content.startswith("```"):
+            text_content = text_content[3:]
+        if text_content.endswith("```"):
+            text_content = text_content[:-3]
+
+        # Parse JSON
+        parsed = json.loads(text_content.strip())
+
+        # Convert to RawCarData
+        vehicles = []
+        for item in parsed.get("vehicles", []):
+            try:
+                vehicle = RawCarData(
+                    vin=item.get("vin"),
+                    source="google-search",
+                    year=item.get("year"),
+                    make=item.get("make"),
+                    model=item.get("model"),
+                    trim=item.get("trim"),
+                    condition=item.get("condition", "used"),
+                    price=item.get("price"),
+                    mileage=item.get("mileage"),
+                    distance_miles=0.0,
+                    dealer_name=dealer_name,
+                    dealer_url=batch[0]["url"],  # Use first page URL
+                    dealer_phone=None,
+                    thumbnail_url=None
+                )
+
+                if vehicle.year and vehicle.make and vehicle.model and vehicle.price:
+                    vehicles.append(vehicle)
+
+            except Exception as e:
+                continue
+
+        return vehicles
+
+    except Exception as e:
+        print(f"        Gemini batch parse error: {e}")
+        return []
 
 
 async def parse_with_gemini(client: httpx.AsyncClient, text: str, page: Dict, config: AppConfig) -> List[RawCarData]:
