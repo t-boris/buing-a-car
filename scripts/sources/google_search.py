@@ -200,15 +200,17 @@ async def google_search(client: httpx.AsyncClient, query: str, num: int = 10, si
     Returns:
         List of search result items
     """
-    if site:
-        query = f"site:{site} {query}"
-
     params = {
         "key": GOOGLE_API_KEY,
         "cx": GOOGLE_CSE_ID,
         "q": query,
         "num": min(num, 10),  # API limit is 10 per request
     }
+
+    # Use siteSearch parameter instead of site: operator in query
+    if site:
+        params["siteSearch"] = site
+        params["siteSearchFilter"] = "i"  # include results from this site
 
     start_time = time.time()
     response = await client.get(GOOGLE_SEARCH_URL, params=params)
